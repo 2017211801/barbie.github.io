@@ -6,6 +6,7 @@
         content="Given a prompt, Barbie generates a disentangled 3D digital human dressed in high-fidelity and diverse garments and accessories, similar to Barbie dolls.">
   <meta name="keywords" content="3D Computer Vision, 3DAIGC, Text-to-Avatar, Digital Human Generation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
   <title>Barbie: Text to Barbie-Style 3D Avatars</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -158,7 +159,7 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <img id="teaser" src="./static/images/teaser.png" alt="Teaser Image" style="width: 100%; height: auto;">
-      <h2 class="subtitle has-text-centered">
+      <h2 class="subtitle has-text-justified">
         Using only texts as input, our method can generate <b>Barbie-style</b> 3D avatars. <b>"Barbie-style"</b> refers to <b>(1)</b> the generated 3D avatars exhibiting <b>high quality</b> and <b>diversity</b>;  <b>(2)</b> the generated body, garments, and accessories being <b>disentangled</b>; and <b>(3)</b> the generated results supporting seamless <b>apparel composition</b> and user-friendly animation, similar to <b>Barbie dolls</b>.
       </h2>
     </div>
@@ -360,8 +361,24 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
         <h2 class="title is-3">Abstract</h2>
-        <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle has-text-justified">
         Recent advances in text-guided 3D avatar generation have made substantial progress by distilling knowledge from diffusion models. Despite the plausible generated appearance, existing methods cannot achieve fine-grained disentanglement or high-fidelity modeling between inner body and outfit. In this paper, we propose Barbie, a novel framework for generating 3D avatars that can be dressed in diverse and high-quality Barbie-like garments and accessories. nstead of relying on a holistic model, Barbie achieves fine-grained disentanglement on avatars by semantic-aligned separated models for human body and outfits. These disentangled 3D representations are then optimized by different expert models to guarantee the domain-specific fidelity. To balance geometry diversity and reasonableness, we propose a series of losses for template-preserving and human-prior evolving. The final avatar is enhanced by unified texture refinement for superior texture consistency. Extensive experiments demonstrate that Barbie outperforms existing methods in both dressed human and outfit generation, supporting flexible apparel combination and animation.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Method Highlights</h2>
+        <div class="has-text-centered">
+          <img src="./static/images/highlights.png" alt="pipeline" style="max-width: 100%; height: auto;">
+        </div>
+        <h2 class="subtitle has-text-justified">
+          Compared to holistic methods, Barbie effectively decouples the human body from different apparels while exhibiting fine details in the hands and head. In contrast to disentangled approaches, Barbie demonstrates a notable quality advantage and is capable of generating detailed accessories.
         </h2>
       </div>
     </div>
@@ -376,7 +393,7 @@
         <div class="has-text-centered">
           <img src="./static/images/pipeline.png" alt="pipeline" style="max-width: 100%; height: auto;">
         </div>
-        <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle has-text-justified">
           Barbie consists of three stages: (a) Using human-specific diffusion models and self-evolving human prior loss, Barbie generates a plausible and high-fidelity basic human body; (b) Initializing with the semantic-aligned template mesh, Barbie creates high-quality clothes and accessories piece by piece using object-specific diffusion models and template-preserving loss; (c) Finally, Barbie jointly fine-tunes the assembled avatar to further enhance the texture harmony and consistency.
         </h2>
       </div>
@@ -492,7 +509,22 @@
   </div>
 </section>
 
-<section class="section" id="BibTeX">
+<section class="section">
+  <div class="container is-max-desktop has-text-centered">
+    <p class="title is-3 has-text-centered"> Exported Meshes </p>
+    <div class="level">
+      <div class="level-item">
+        <model-viewer src="./static/meshes/anya.glb" poster="./static/meshes/anya.jpg" style="width: 100%; height: 300px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+      </div>
+      <div class="level-item">
+        <model-viewer src="./static/meshes/luigi.glb" poster="./static/meshes/luigi.jpg" style="width: 100%; height: 300px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{park2021nerfies,
@@ -502,7 +534,7 @@
   year      = {2021},
 }</code></pre>
   </div>
-</section>
+</section> -->
 
 
 <footer class="footer">
